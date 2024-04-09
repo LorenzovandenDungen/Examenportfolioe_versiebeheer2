@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <!-- Replace with the global header if it's included elsewhere in your project -->
     <header class="header">
-      <img class="logo" src="@/assets/logo.svg" alt="Your Logo">
+      <!-- De logo afbeelding moet worden aangepast aan je eigen logo -->
+      <img class="logo" src="../" alt="Logo">
       <nav class="nav">
         <a href="#home">Home</a>
         <a href="#websites">Websites</a>
@@ -12,32 +12,35 @@
       </nav>
     </header>
 
-    <!-- Main banner with background image -->
     <div class="main-banner">
-      <div class="banner-content">
-        <h1>Website laten maken?</h1>
-        <p>Contact</p>
-        <p>Tarieven</p>
-        <button class="main-button">Contact</button>
+      <!-- Banner content hier. Je zou een achtergrondafbeelding moeten toevoegen -->
+      <h1>Website laten maken?</h1>
+      <p>Contact</p>
+      <button class="main-button">Meer Informatie</button>
+    </div>
+
+    <div class="content">
+      <!-- Je content blokken hier -->
+      <div class="content-block">
+        <h2>Contact</h2>
+        <p>Omschrijving van hoe contact op te nemen of diensten.</p>
+        <button>Contact Opnemen</button>
+      </div>
+      <div class="content-block">
+        <h2>Tarieven</h2>
+        <p>Informatie over je prijzen of pakketten.</p>
+        <button>Prijzen Bekijken</button>
       </div>
     </div>
 
-    <!-- Content blocks -->
-    <div class="content">
-      <!-- You might want to replace these placeholders with actual content or components -->
-      <div class="content-block">Website laten maken?</div>
-      <div class="content-block">Contact</div>
-      <div class="content-block">Tarieven</div>
-    </div>
-
-    <!-- Features section -->
     <div class="features">
-      <div class="feature-block">Button</div>
-      <div class="feature-block">Button</div>
+      <!-- Voeg hier kenmerken of services toe -->
+      <div class="feature-block">Kenmerk 1</div>
+      <div class="feature-block">Kenmerk 2</div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
+      <!-- Footer informatie -->
       Footer
     </footer>
   </div>
@@ -46,7 +49,7 @@
 <script>
 export default {
   name: 'HomeView',
-  // Your component logic here
+  // Voeg hier component logica toe als dat nodig is
 };
 </script>
 
@@ -55,71 +58,92 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  /* Pas kleuren en marges aan op basis van je ontwerp */
 }
 
 .header {
-  background-color: #FFFFFF; /* Adjust based on your color scheme */
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
   align-items: center;
+  /* Voeg padding en andere stijlen toe zoals nodig */
 }
 
-.logo {
-  width: 100px; /* Adjust based on your actual logo size */
-}
+  .logo {
+    /* Adjust this as necessary */
+    width: 150px;
+    height: auto;
+  }
 
-.nav a {
-  margin-right: 1rem;
-  color: #000; /* Adjust text color as needed */
-}
+  .nav {
+    display: flex;
+    gap: 1rem;
+  }
 
-.main-banner {
-  background-image: url('../code-review-tools.png'); /* Replace with your actual image path */
-  background-size: cover;
-  background-position: center;
-  padding: 4rem;
-  flex-grow: 2;
-}
+  .main-banner {
+    background-color: #FFEB3B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    flex-grow: 1;
+  }
 
-.banner-content {
-  max-width: 600px; /* Adjust width as needed */
-}
+  .content {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 2; /* Allows this section to take up more space */
+  }
 
-.main-button {
-  background-color: #0045FF; /* Button background color */
-  color: white; /* Button text color */
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
+  .content-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: calc(33.333% - 2rem);
+    margin: 1rem;
+  }
 
-.content {
-  display: flex;
-  justify-content: space-around;
-  flex-grow: 1;
-}
+  .image-placeholder {
+    width: 100%;
+    height: 150px;
+    background-color: #ddd;
+    margin-bottom: 1rem;
+  }
 
-.content-block {
-  margin: 1rem;
-  /* Add styles for content blocks */
-}
+  .text-placeholder {
+    width: 100%;
+    height: 2rem;
+    background-color: #eee;
+    margin-bottom: 1rem;
+  }
 
-.features {
-  background-color: #E0E0E0; /* Background color for the features section */
-  display: flex;
-  justify-content: space-around;
-  padding: 2rem;
-}
+  .features {
+    background-color: #90CAF9;
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
 
-.feature-block {
-  /* Style your feature blocks */
-}
+  .feature-block {
+    background-color: #fff;
+    padding: 1rem;
+    flex-basis: calc(33.333% - 2rem);
+    margin: 1rem;
+  }
 
-.footer {
-  background-color: #757575;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-</style>
+  .main-button, button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  .footer {
+    background-color: #757575;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; /* Pushes footer to the bottom */
+  }
+  </style>
