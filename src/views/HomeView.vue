@@ -96,6 +96,10 @@ export default {
   text-align: center;
 }
 
+.banner-content h1 {
+  color: #fff; /* This sets the color of the text to white */
+}
+
 .content {
   display: flex;
   padding: 2rem 5%;
