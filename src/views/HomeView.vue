@@ -3,11 +3,11 @@
     <header class="header">
       <img class="logo" src="./Logo.png" alt="Logo">
       <nav class="nav">
-        <a href="/" class="nav-link">Home</a>
-        <a href="websites" class="nav-link">Websites</a>
-        <a href="tarieven" class="nav-link">Tarieven</a>
-        <a href="contact" class="nav-link">Contact</a>
-        <a href="offerte" class="nav-link">Offerte</a>
+        <router-link to="/" class="nav-link">Home</router-link>
+        <router-link to="/websites" class="nav-link">Websites</router-link>
+        <router-link to="/tarieven" class="nav-link">Tarieven</router-link>
+        <router-link to="/contact" class="nav-link">Contact</router-link>
+        <router-link to="/offerte" class="nav-link">Offerte</router-link>
       </nav>
     </header>
 
@@ -21,21 +21,21 @@
         <div class="image-block"></div>
         <h2 class="block-title">Contact</h2>
         <p class="block-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <button class="block-button">Meer informatie</button>
+        <button class="block-button" @click="goToContact">Meer informatie</button>
       </div>
 
       <div class="content-block">
         <div class="image-block"></div>
         <h2 class="block-title">Tarieven</h2>
         <p class="block-description">Pellentesque habitant morbi tristique senectus et netus.</p>
-        <button class="block-button">Bekijk pakketten</button>
+        <button class="block-button" @click="goToTarieven">Bekijk pakketten</button>
       </div>
 
       <div class="content-block">
         <div class="image-block"></div>
         <h2 class="block-title">Websites</h2>
         <p class="block-description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <button class="block-button">Bekijk voorbeelden</button>
+        <button class="block-button" @click="goToWebsites">Bekijk voorbeelden</button>
       </div>
     </div>
 
@@ -50,18 +50,15 @@ export default {
   name: 'HomeView',
   methods: {
     goToContact() {
-      // Logic to navigate to the contact view
-      this.$router.push({ name: 'ContactView' });
+      this.$router.push('/contact');
     },
     goToTarieven() {
-      // Logic to navigate to the tarieven view
-      this.$router.push({ name: 'TarievenView' });
+      this.$router.push('/tarieven');
     },
     goToWebsites() {
-      // Logic to navigate to the websites view
-      this.$router.push({ name: 'WebsitesView' });
+      this.$router.push('/websites');
     },
-    // Add more methods as needed for other buttons
+    // You can add more methods if you have more buttons
   },
 };
 </script>
