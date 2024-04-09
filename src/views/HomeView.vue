@@ -2,7 +2,7 @@
   <div class="container">
     <header class="header">
       <!-- De logo afbeelding moet worden aangepast aan je eigen logo -->
-      <img class="logo" src="../" alt="Logo">
+      <img class="logo" src="./Logo.png" alt="Logo">
       <nav class="nav">
         <a href="#home">Home</a>
         <a href="#websites">Websites</a>
