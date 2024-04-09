@@ -79,7 +79,7 @@ export default {
   background-color: #fff;
   padding: 1rem 5%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
