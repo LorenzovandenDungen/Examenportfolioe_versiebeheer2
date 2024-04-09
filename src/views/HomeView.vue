@@ -1,7 +1,8 @@
 <template>
   <div class="container">
+    <!-- Replace with the global header if it's included elsewhere in your project -->
     <header class="header">
-      <div class="logo">YOUR LOGO</div>
+      <img class="logo" src="@/assets/logo.svg" alt="Your Logo">
       <nav class="nav">
         <a href="#home">Home</a>
         <a href="#websites">Websites</a>
@@ -11,25 +12,31 @@
       </nav>
     </header>
 
+    <!-- Main banner with background image -->
     <div class="main-banner">
-      <button class="main-button">Button</button>
+      <div class="banner-content">
+        <h1>Website laten maken?</h1>
+        <p>Contact</p>
+        <p>Tarieven</p>
+        <button class="main-button">Contact</button>
+      </div>
     </div>
 
+    <!-- Content blocks -->
     <div class="content">
-      <div class="content-block" v-for="i in 3" :key="`content-${i}`">
-        <div class="image-placeholder"></div>
-        <div class="text-placeholder"></div>
-        <button>Button</button>
-      </div>
+      <!-- You might want to replace these placeholders with actual content or components -->
+      <div class="content-block">Website laten maken?</div>
+      <div class="content-block">Contact</div>
+      <div class="content-block">Tarieven</div>
     </div>
 
+    <!-- Features section -->
     <div class="features">
-      <div class="feature-block" v-for="i in 3" :key="`feature-${i}`">
-        <div class="text-placeholder"></div>
-        <button>Button</button>
-      </div>
+      <div class="feature-block">Button</div>
+      <div class="feature-block">Button</div>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
       Footer
     </footer>
@@ -38,8 +45,8 @@
 
 <script>
 export default {
-  name: 'HomeView'
-  // You can add your script content here if needed
+  name: 'HomeView',
+  // Your component logic here
 };
 </script>
 
@@ -51,7 +58,7 @@ export default {
 }
 
 .header {
-  background-color: #FFC107;
+  background-color: #FFFFFF; /* Adjust based on your color scheme */
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -59,80 +66,60 @@ export default {
 }
 
 .logo {
-  /* Adjust this as necessary */
-  width: 150px;
-  height: auto;
+  width: 100px; /* Adjust based on your actual logo size */
 }
 
-.nav {
-  display: flex;
-  gap: 1rem;
+.nav a {
+  margin-right: 1rem;
+  color: #000; /* Adjust text color as needed */
 }
 
 .main-banner {
-  background-color: #FFEB3B;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  flex-grow: 1;
+  background-image: url('../code-review-tools.png'); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  padding: 4rem;
+  flex-grow: 2;
 }
 
-.content {
-  display: flex;
-  justify-content: space-between;
-  flex-grow: 2; /* Allows this section to take up more space */
+.banner-content {
+  max-width: 600px; /* Adjust width as needed */
 }
 
-.content-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-basis: calc(33.333% - 2rem);
-  margin: 1rem;
-}
-
-.image-placeholder {
-  width: 100%;
-  height: 150px;
-  background-color: #ddd;
-  margin-bottom: 1rem;
-}
-
-.text-placeholder {
-  width: 100%;
-  height: 2rem;
-  background-color: #eee;
-  margin-bottom: 1rem;
-}
-
-.features {
-  background-color: #90CAF9;
-  display: flex;
-  justify-content: space-between;
-  flex-grow: 1;
-}
-
-.feature-block {
-  background-color: #fff;
-  padding: 1rem;
-  flex-basis: calc(33.333% - 2rem);
-  margin: 1rem;
-}
-
-.main-button, button {
-  background-color: #000;
-  color: #fff;
+.main-button {
+  background-color: #0045FF; /* Button background color */
+  color: white; /* Button text color */
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
 
+.content {
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.content-block {
+  margin: 1rem;
+  /* Add styles for content blocks */
+}
+
+.features {
+  background-color: #E0E0E0; /* Background color for the features section */
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.feature-block {
+  /* Style your feature blocks */
+}
+
 .footer {
   background-color: #757575;
-  color: #fff;
+  color: white;
   text-align: center;
   padding: 1rem;
-  margin-top: auto; /* Pushes footer to the bottom */
 }
 </style>
