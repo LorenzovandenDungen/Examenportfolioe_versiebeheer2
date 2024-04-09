@@ -3,41 +3,44 @@
     <header class="header">
       <img class="logo" src="./Logo.png" alt="Logo">
       <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#websites">Websites</a>
-        <a href="#tarieven">Tarieven</a>
-        <a href="#contact">Contact</a>
-        <a href="#offerte">Offerte</a>
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#websites" class="nav-link">Websites</a>
+        <a href="#tarieven" class="nav-link">Tarieven</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#offerte" class="nav-link">Offerte</a>
       </nav>
     </header>
 
     <div class="main-banner">
-      <div class="banner-content">
-        <h1>Website laten maken?</h1>
-        <button class="main-button">Contact</button>
-      </div>
+      <h1 class="banner-title">Website laten maken?</h1>
+      <button class="banner-button">Contact</button>
     </div>
 
-    <div class="content">
+    <div class="content-section">
       <div class="content-block">
-        <div class="title-placeholder"></div>
-        <div class="text-placeholder"></div>
-        <button>Button</button>
+        <div class="image-block"></div>
+        <h2 class="block-title">Contact</h2>
+        <p class="block-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button class="block-button">Meer informatie</button>
       </div>
+
       <div class="content-block">
-        <div class="title-placeholder"></div>
-        <div class="text-placeholder"></div>
-        <button>Button</button>
+        <div class="image-block"></div>
+        <h2 class="block-title">Tarieven</h2>
+        <p class="block-description">Pellentesque habitant morbi tristique senectus et netus.</p>
+        <button class="block-button">Bekijk pakketten</button>
       </div>
+
       <div class="content-block">
-        <div class="title-placeholder"></div>
-        <div class="text-placeholder"></div>
-        <button>Button</button>
+        <div class="image-block"></div>
+        <h2 class="block-title">Websites</h2>
+        <p class="block-description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <button class="block-button">Bekijk voorbeelden</button>
       </div>
     </div>
 
     <footer class="footer">
-      Footer
+      &copy; 2024 Your Company Name. All Rights Reserved.
     </footer>
   </div>
 </template>
@@ -53,6 +56,7 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Arial', sans-serif;
 }
 
 .header {
@@ -61,11 +65,12 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo {
   width: auto;
-  height: 50px; /* Adjust based on your logo's aspect ratio */
+  height: 50px;
 }
 
 .nav {
@@ -77,63 +82,76 @@ export default {
   padding: 0;
 }
 
-.nav a {
+.nav-link {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  padding: 0.5rem 1rem;
 }
 
 .main-banner {
-  position: relative;
   background-image: url('./Foto_main_banner.png');
   background-size: cover;
   background-position: center;
-  padding: 4rem 0;
-}
-
-.banner-content {
-  width: 100%;
   text-align: center;
+  padding: 5rem 1rem;
+  position: relative;
+  color: #fff;
 }
 
-.banner-content h1 {
-  color: #fff; /* This sets the color of the text to white */
+.banner-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.content {
+.banner-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.content-section {
   display: flex;
+  justify-content: space-around;
   padding: 2rem 5%;
 }
 
 .content-block {
-  flex: 1;
-  margin: 0 1rem;
+  width: 30%;
   text-align: center;
 }
 
-.title-placeholder {
-  height: 3rem; /* Title height */
-  background-color: #eee; /* Title placeholder color */
+.image-block {
+  background-color: #0d6efd; /* Bootstrap primary color */
+  height: 200px;
   margin-bottom: 1rem;
 }
 
-.text-placeholder {
-  height: 6rem; /* Text placeholder height */
-  background-color: #f5f5f5; /* Text placeholder color */
-  margin-bottom: 2rem;
+.block-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
 }
 
-.main-button, .content button {
-  background-color: #000;
+.block-description {
+  margin-bottom: 1rem;
+  color: #666;
+  font-size: 1rem;
+}
+
+.block-button {
+  background-color: #0d6efd; /* Bootstrap primary color */
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  margin-top: 1rem;
+  font-size: 1rem;
 }
 
 .footer {
-  background-color: #757575;
+  background-color: #343a40; /* Bootstrap dark */
   color: #fff;
   text-align: center;
   padding: 1rem;
