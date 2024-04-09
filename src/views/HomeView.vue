@@ -3,17 +3,17 @@
     <header class="header">
       <img class="logo" src="./Logo.png" alt="Logo">
       <nav class="nav">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#websites" class="nav-link">Websites</a>
-        <a href="#tarieven" class="nav-link">Tarieven</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <a href="#offerte" class="nav-link">Offerte</a>
+        <a href="home" class="nav-link">Home</a>
+        <a href="websites" class="nav-link">Websites</a>
+        <a href="tarieven" class="nav-link">Tarieven</a>
+        <a href="contact" class="nav-link">Contact</a>
+        <a href="offerte" class="nav-link">Offerte</a>
       </nav>
     </header>
 
     <div class="main-banner">
       <h1 class="banner-title">Website laten maken?</h1>
-      <button class="banner-button">Contact</button>
+      <button class="banner-button" @click="goToContact">Contact</button>
     </div>
 
     <div class="content-section">
@@ -48,8 +48,24 @@
 <script>
 export default {
   name: 'HomeView',
+  methods: {
+    goToContact() {
+      // Logic to navigate to the contact view
+      this.$router.push({ name: 'ContactView' });
+    },
+    goToTarieven() {
+      // Logic to navigate to the tarieven view
+      this.$router.push({ name: 'TarievenView' });
+    },
+    goToWebsites() {
+      // Logic to navigate to the websites view
+      this.$router.push({ name: 'WebsitesView' });
+    },
+    // Add more methods as needed for other buttons
+  },
 };
 </script>
+
 
 <style scoped>
 .container {
