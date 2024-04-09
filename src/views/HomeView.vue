@@ -3,7 +3,7 @@
     <header class="header">
       <img class="logo" src="./Logo.png" alt="Logo">
       <nav class="nav">
-        <a href="home" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Home</a>
         <a href="websites" class="nav-link">Websites</a>
         <a href="tarieven" class="nav-link">Tarieven</a>
         <a href="contact" class="nav-link">Contact</a>
@@ -79,7 +79,7 @@ export default {
   background-color: #fff;
   padding: 1rem 5%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
