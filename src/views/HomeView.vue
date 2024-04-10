@@ -3,39 +3,21 @@
     <header class="header">
       <img class="logo" src="./Logo.png" alt="Logo">
       <nav class="nav">
-        <router-link to="/" class="nav-link">Home</router-link>
-        <router-link to="/websites" class="nav-link">Websites</router-link>
-        <router-link to="/tarieven" class="nav-link">Tarieven</router-link>
-        <router-link to="/contact" class="nav-link">Contact</router-link>
-        <router-link to="/offerte" class="nav-link">Offerte</router-link>
+        <router-link v-for="link in navLinks" :key="link.to" :to="link.to" class="nav-link">{{ link.text }}</router-link>
       </nav>
     </header>
 
     <div class="main-banner">
       <h1 class="banner-title">Website laten maken?</h1>
-      <button class="banner-button" @click="goToContact">Contact</button>
+      <button class="banner-button" @click="navigateTo('/contact')">Contact</button>
     </div>
 
     <div class="content-section">
-      <div class="content-block">
+      <div v-for="block in blocks" :key="block.title" class="content-block">
         <div class="image-block"></div>
-        <h2 class="block-title">Contact</h2>
-        <p class="block-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <button class="block-button" @click="goToContact">Meer informatie</button>
-      </div>
-
-      <div class="content-block">
-        <div class="image-block"></div>
-        <h2 class="block-title">Tarieven</h2>
-        <p class="block-description">Pellentesque habitant morbi tristique senectus et netus.</p>
-        <button class="block-button" @click="goToTarieven">Bekijk pakketten</button>
-      </div>
-
-      <div class="content-block">
-        <div class="image-block"></div>
-        <h2 class="block-title">Websites</h2>
-        <p class="block-description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <button class="block-button" @click="goToWebsites">Bekijk voorbeelden</button>
+        <h2 class="block-title">{{ block.title }}</h2>
+        <p class="block-description">{{ block.description }}</p>
+        <button class="block-button" @click="navigateTo(block.route)">{{ block.buttonText }}</button>
       </div>
     </div>
 
@@ -48,18 +30,27 @@
 <script>
 export default {
   name: 'HomeView',
-  methods: {
-    goToContact() {
-      this.$router.push('/contact');
-    },
-    goToTarieven() {
-      this.$router.push('/tarieven');
-    },
-    goToWebsites() {
-      this.$router.push('/websites');
-    },
-    // You can add more methods if you have more buttons
+  data() {
+    return {
+      navLinks: [
+        { to: '/', text: 'Home' },
+        { to: '/websites', text: 'Websites' },
+        { to: '/tarieven', text: 'Tarieven' },
+        { to: '/contact', text: 'Contact' },
+        { to: '/offerte', text: 'Offerte' }
+      ],
+      blocks: [
+        { title: 'Contact', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', route: '/contact', buttonText: 'Meer informatie' },
+        { title: 'Tarieven', description: 'Pellentesque habitant morbi tristique senectus et netus.', route: '/tarieven', buttonText: 'Bekijk pakketten' },
+        { title: 'Websites', description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', route: '/websites', buttonText: 'Bekijk voorbeelden' }
+      ]
+    };
   },
+  methods: {
+    navigateTo(route) {
+      this.$router.push(route);
+    }
+  }
 };
 </script>
 
