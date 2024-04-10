@@ -7,21 +7,33 @@
     <main class="content">
       <h1 class="title">Tarieven</h1>
       <p class="introduction">Korte inleiding</p>
-      <p class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
       <div class="price-container">
-        <div class="price-box">
-          <p class="price">Prijs</p>
-          <button class="buy-button">Kopen</button>
+        <div class="price-box free">
+          <h2>FREE</h2>
+          <p class="price">$0/month</p>
+          <ul>
+            <li>✔ PNG templates</li>
+          </ul>
+          <button class="buy-button">Probeer nu</button>
         </div>
-        <div class="price-box">
-          <p class="price">Prijs</p>
-          <button class="buy-button">Kopen</button>
+        <div class="price-box premium">
+          <h2>PREMIUM</h2>
+          <p class="price">$99/month</p>
+          <ul>
+            <li>✔ PNG templates</li>
+            <li>✔ Figma responsive components</li>
+          </ul>
+          <button class="buy-button">Probeer nu</button>
         </div>
-        <div class="price-box">
-          <p class="price">Prijs</p>
-          <button class="buy-button">Kopen</button>
+        <div class="price-box pro">
+          <h2>PRO</h2>
+          <p class="price">$199/month</p>
+          <ul>
+            <li>✔ PNG templates</li>
+            <li>✔ Figma responsive components</li>
+            <li>✔ Constant updates</li>
+          </ul>
+          <button class="buy-button">Probeer nu</button>
         </div>
       </div>
     </main>
@@ -66,10 +78,6 @@ header {
   margin-bottom: 2em;
 }
 
-.description {
-  margin-bottom: 3em;
-}
-
 .price-container {
   display: flex;
   justify-content: space-evenly;
@@ -81,29 +89,52 @@ header {
   border: 1px solid #ccc;
   padding: 2em;
   width: 300px;
-  min-height: 150px;
+  min-height: 250px; /* Adjust height as necessary */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.price-box h2 {
+  margin: 0;
+  font-size: 1.25em;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #333; /* Adjust the color to match the design */
+}
+
 .price {
-  font-size: 1.5em;
+  font-size: 2em; /* Adjust the font size to match the design */
   font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.price-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0;
+  text-align: left;
+}
+
+.price-box li {
+  margin-bottom: 0.5em;
+  font-size: 1em; /* Adjust the font size to match the design */
 }
 
 .buy-button {
-  background-color: #fff;
+  background-color: #4CAF50; /* Adjust the button color to match the design */
   padding: 10px 20px;
   cursor: pointer;
-  border: 2px solid #000;
+  border: none;
+  color: white; /* Text color */
+  text-transform: uppercase;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .buy-button:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: #45a049; /* Darker shade for hover effect */
 }
 
 footer {
