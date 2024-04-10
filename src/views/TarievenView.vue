@@ -65,9 +65,7 @@
   min-height: 100vh;
 }
 
-header {
-  /* Add header styles here */
-}
+
 
 .content {
   flex: 1;
@@ -82,12 +80,6 @@ header {
 
 .title {
   margin-bottom: 1em;
-}
-
-.introduction {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 2em;
 }
 
 .price-container {
