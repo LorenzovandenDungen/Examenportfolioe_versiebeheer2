@@ -6,7 +6,6 @@
 
     <main class="content">
       <h1 class="title">Tarieven</h1>
-      <p class="introduction">Korte inleiding</p>
       <div class="price-container">
         <div class="price-box">
           <h2 class="package-title">BUDGET</h2>
