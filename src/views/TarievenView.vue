@@ -9,29 +9,39 @@
       <p class="introduction">Korte inleiding</p>
       <div class="price-container">
         <div class="price-box free">
-          <h2>FREE</h2>
-          <p class="price">$0/month</p>
+          <h2>Budget</h2>
+          <p class="price">€150</p>
           <ul>
-            <li>✔ PNG templates</li>
+            <li>✔ Nieuw Design</li>
+            <li>✔ One Pager</li>
+            <li>✔ Domeinnaan</li>
+            <li>✔ 100% jouw eigendom</li>
           </ul>
           <button class="buy-button">Probeer nu</button>
         </div>
         <div class="price-box premium">
           <h2>PREMIUM</h2>
-          <p class="price">$99/month</p>
+          <p class="price">€350</p>
           <ul>
-            <li>✔ PNG templates</li>
-            <li>✔ Figma responsive components</li>
+            <li>✔ Nieuw Design</li>
+            <li>✔ Vijf Pagina's</li>
+            <li>✔ Gratis StockFoto's</li>
+            <li>✔ Domeinnaan</li>
+            <li>✔ 100% jouw eigendom</li>
           </ul>
           <button class="buy-button">Probeer nu</button>
         </div>
         <div class="price-box pro">
           <h2>PRO</h2>
-          <p class="price">$199/month</p>
+          <p class="price">€550</p>
           <ul>
-            <li>✔ PNG templates</li>
-            <li>✔ Figma responsive components</li>
-            <li>✔ Constant updates</li>
+            <li>✔ Nieuw Design</li>
+            <li>✔ Vijf Pagina's</li>
+            <li>✔ Gratis StockFoto's</li>
+            <li>✔ Domeinnaan</li>
+            <li>✔ 100% jouw eigendom</li>
+            <li>✔ Korting op SEO tekst</li>
+            <li>✔ Slider op homepage</li>
           </ul>
           <button class="buy-button">Probeer nu</button>
         </div>
