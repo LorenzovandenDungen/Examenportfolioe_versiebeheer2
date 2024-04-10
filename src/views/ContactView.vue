@@ -1,6 +1,4 @@
 <template>
-  <div class="contact-view">
-    <GlobalHeader />
 
     <div class="contact-content">
       <section class="contact-info">
@@ -68,11 +66,9 @@
         <button type="submit">Send Message</button>
       </form>
     </div>
-  </div>
 </template>
 
-<script setup>
-import GlobalHeader from '../components/GlobalHeader.vue'
+<script setup> 
 </script>
 
 <style scoped>
