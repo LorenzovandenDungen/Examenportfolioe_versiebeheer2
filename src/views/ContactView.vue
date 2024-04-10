@@ -1,5 +1,4 @@
 <template>
-
     <div class="contact-content">
       <section class="contact-info">
         <h1>Contact Information</h1>
