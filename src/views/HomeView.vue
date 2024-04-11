@@ -1,10 +1,7 @@
 <template>
   <div class="container">
     <header class="header">
-      <img class="logo" src="./Logo.png" alt="Logo">
-      <nav class="nav">
-        <router-link v-for="link in navLinks" :key="link.to" :to="link.to" class="nav-link">{{ link.text }}</router-link>
-      </nav>
+
     </header>
 
     <div class="main-banner">
