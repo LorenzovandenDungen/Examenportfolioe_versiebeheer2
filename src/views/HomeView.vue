@@ -1,46 +1,45 @@
 <template>
-  <div class="container">
-    <header class="header">
-
+  <div class="container-fluid"> <!-- Use container-fluid for full width -->
+    <!-- Bootstrap Navbar or Header -->
+    <header class="mb-5"> <!-- Added margin bottom -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <router-link class="navbar-brand" to="/">Lorenzo</router-link>
+      </nav>
     </header>
 
-    <div class="main-banner">
-      <h1 class="banner-title">Website laten maken?</h1>
-      <button class="banner-button" @click="navigateTo('/contact')">Contact</button>
+    <!-- Main Banner with Background Image -->
+    <div class="main-banner text-white text-center py-5 mb-5"> <!-- Added margin bottom -->
+      <h1 class="banner-title display-3">Website laten maken?</h1>
+      <button class="btn btn-secondary" @click="navigateTo('/contact')">Contact</button>
     </div>
 
-    <div class="content-section">
-      <div v-for="block in blocks" :key="block.title" class="content-block">
-        <div class="image-block"></div>
-        <h2 class="block-title">{{ block.title }}</h2>
+    <!-- Content Section -->
+    <div class="row"> <!-- Use row for a grid layout -->
+      <div v-for="block in blocks" :key="block.title" class="col-md-4 mb-5"> <!-- Use col-md-4 to take up 4/12 of the container width for each block, added margin bottom -->
+        <div class="image-block bg-primary mb-3" style="height: 200px;"></div> <!-- Added inline style for height -->
+        <h2 class="block-title h4">{{ block.title }}</h2>
         <p class="block-description">{{ block.description }}</p>
-        <button class="block-button" @click="navigateTo(block.route)">{{ block.buttonText }}</button>
+        <button class="btn btn-primary" @click="navigateTo(block.route)">{{ block.buttonText }}</button>
       </div>
     </div>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white text-center py-3 mt-auto"> <!-- mt-auto will push the footer to the bottom -->
       &copy; 2024 Your Company Name. All Rights Reserved.
     </footer>
   </div>
 </template>
 
 <script>
+// Import your image here so Webpack handles it
+import mainBannerImage from '@/assets/Foto_main_banner.png';
+
 export default {
   name: 'HomeView',
   data() {
     return {
-      navLinks: [
-        { to: '/', text: 'Home' },
-        { to: '/websites', text: 'Websites' },
-        { to: '/tarieven', text: 'Tarieven' },
-        { to: '/contact', text: 'Contact' },
-        { to: '/offerte', text: 'Offerte' }
-      ],
-      blocks: [
-        { title: 'Contact', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', route: '/contact', buttonText: 'Meer informatie' },
-        { title: 'Tarieven', description: 'Pellentesque habitant morbi tristique senectus et netus.', route: '/tarieven', buttonText: 'Bekijk pakketten' },
-        { title: 'Websites', description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', route: '/websites', buttonText: 'Bekijk voorbeelden' }
-      ]
+      // ... your data properties ...
+      mainBannerImageUrl: mainBannerImage // This will be used in the style below
     };
   },
   methods: {
@@ -51,111 +50,13 @@ export default {
 };
 </script>
 
-
 <style scoped>
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Arial', sans-serif;
-}
-
-.header {
-  background-color: #fff;
-  padding: 1rem 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.logo {
-  width: auto;
-  height: 50px;
-}
-
-.nav {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-}
-
 .main-banner {
-  background-image: url('./Foto_main_banner.png');
+  background-image: url('../assets/Foto_main_banner.png'); /* Webpack will resolve this URL */
   background-size: cover;
   background-position: center;
-  text-align: center;
-  padding: 5rem 1rem;
-  position: relative;
-  color: #fff;
+  min-height: 400px; /* Adjust height as necessary */
 }
 
-.banner-title {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.banner-button {
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 0.75rem 2rem;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.content-section {
-  display: flex;
-  justify-content: space-around;
-  padding: 2rem 5%;
-}
-
-.content-block {
-  width: 30%;
-  text-align: center;
-}
-
-.image-block {
-  background-color: #0d6efd; /* Bootstrap primary color */
-  height: 200px;
-  margin-bottom: 1rem;
-}
-
-.block-title {
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-}
-
-.block-description {
-  margin-bottom: 1rem;
-  color: #666;
-  font-size: 1rem;
-}
-
-.block-button {
-  background-color: #0d6efd; /* Bootstrap primary color */
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.footer {
-  background-color: #343a40; /* Bootstrap dark */
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  margin-top: auto;
-}
+/* You can remove this if there are no more custom styles or keep it for further customizations */
 </style>
