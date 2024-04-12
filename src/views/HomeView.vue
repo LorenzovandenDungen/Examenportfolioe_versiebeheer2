@@ -1,45 +1,58 @@
 <template>
-  <div class="container-fluid"> <!-- Use container-fluid for full width -->
-    <!-- Bootstrap Navbar or Header -->
-    <header class="mb-5"> <!-- Added margin bottom -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <router-link class="navbar-brand" to="/">Lorenzo</router-link>
-      </nav>
+  <div class="container-fluid">
+    <header>
+
     </header>
 
-    <!-- Main Banner with Background Image -->
-    <div class="main-banner text-white text-center py-5 mb-5"> <!-- Added margin bottom -->
-      <h1 class="banner-title display-3">Website laten maken?</h1>
-      <button class="btn btn-secondary" @click="navigateTo('/contact')">Contact</button>
+    <div class="main-banner text-white text-center">
+      <h1 class="banner-title">Website laten maken?</h1>
+      <button class="btn btn-light" @click="navigateTo('/contact')">Contact</button>
     </div>
 
-    <!-- Content Section -->
-    <div class="row"> <!-- Use row for a grid layout -->
-      <div v-for="block in blocks" :key="block.title" class="col-md-4 mb-5"> <!-- Use col-md-4 to take up 4/12 of the container width for each block, added margin bottom -->
-        <div class="image-block bg-primary mb-3" style="height: 200px;"></div> <!-- Added inline style for height -->
-        <h2 class="block-title h4">{{ block.title }}</h2>
+    <div class="row content-section">
+      <div v-for="block in blocks" :key="block.title" class="col-md-4 mb-4">
+        <div class="image-block mb-3" :style="{ backgroundImage: 'url(' + block.imageUrl + ')' }"></div>
+        <h2 class="block-title">{{ block.title }}</h2>
         <p class="block-description">{{ block.description }}</p>
-        <button class="btn btn-primary" @click="navigateTo(block.route)">{{ block.buttonText }}</button>
+        <button class="btn btn-secondary" @click="navigateTo(block.route)">{{ block.buttonText }}</button>
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer bg-dark text-white text-center py-3 mt-auto"> <!-- mt-auto will push the footer to the bottom -->
+    <footer class="footer bg-dark text-white text-center py-3">
       &copy; 2024 Your Company Name. All Rights Reserved.
     </footer>
   </div>
 </template>
 
 <script>
-// Import your image here so Webpack handles it
-import mainBannerImage from '@/assets/Foto_main_banner.png';
-
 export default {
   name: 'HomeView',
   data() {
     return {
-      // ... your data properties ...
-      mainBannerImageUrl: mainBannerImage // This will be used in the style below
+      blocks: [
+        {
+          title: 'Title 1',
+          description: 'Description 1',
+          route: '/route1',
+          buttonText: 'Button',
+          imageUrl: 'path-to-your-image'
+        },
+        {
+          title: 'Title 2',
+          description: 'Description 2',
+          route: '/route2',
+          buttonText: 'Button',
+          imageUrl: 'path-to-your-image'
+        },
+        {
+          title: 'Title 3',
+          description: 'Description 3',
+          route: '/route3',
+          buttonText: 'Button',
+          imageUrl: 'path-to-your-image'
+        }
+        // Add more blocks as needed
+      ]
     };
   },
   methods: {
@@ -51,12 +64,29 @@ export default {
 </script>
 
 <style scoped>
+
 .main-banner {
-  background-image: url('../assets/Foto_main_banner.png'); /* Webpack will resolve this URL */
+  background-image: url('../assets/Foto_main_banner.png');
   background-size: cover;
   background-position: center;
-  min-height: 400px; /* Adjust height as necessary */
+  min-height: 400px;
 }
 
-/* You can remove this if there are no more custom styles or keep it for further customizations */
+.content-section {
+  padding: 2rem 0;
+}
+
+.image-block {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #343a40; /* or any color you prefer */
+}
+
 </style>
